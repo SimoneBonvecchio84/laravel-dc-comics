@@ -4,6 +4,9 @@
     <div class="container">
         <h1>Lista Fumetti</h1>
         <table class="table">
+            <div>
+
+            </div>
             <thead>
               <tr>
                 <th scope="col">Id</th>
@@ -19,6 +22,9 @@
                   <td>{{ $curComic->title }}</td>
                   <td>{{ $curComic->price }}</td>
                   <td>{{ $curComic->series }}</td>
+                  <td>
+                    <a class="btn btn-success" href="{{ route('comics.show',[$curComic->id]) }}">Dettagli</a>
+                  </td>
                 </tr>                    
                 @endforeach
             </tbody>
