@@ -5,7 +5,7 @@
         <h1>Lista Fumetti</h1>
         <table class="table">
             <div>
-
+              <a class="btn btn-success" href="{{ route('comics.create') }}">Inserisci un nuovo fumetto</a>
             </div>
             <thead>
               <tr>

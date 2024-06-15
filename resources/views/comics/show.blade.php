@@ -8,9 +8,9 @@
         <dt>Dettagli</dt>
         <dd>{{ $comic->description }}</dd>
         <dd>Prezzo: {{ $comic->price }}</dd>
-        <dd>Serie: {{ $comic->series }}</dd>
+        <dd>Serie:  {{ $comic->series }}</dd>
         <dd>Riedizione: {{ $comic->sale_date }}</dd>
-        <dd>Tipologia: {{ $comic->type }}</dd>
+        <dd>Tipologia:  {{ $comic->type }}</dd>
     </dl>
 </div>    
 @endsection
