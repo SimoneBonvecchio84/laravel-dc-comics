@@ -22,8 +22,14 @@
                   <td>{{ $curComic->title }}</td>
                   <td>{{ $curComic->price }}</td>
                   <td>{{ $curComic->series }}</td>
-                  <td>
+                  <td class="d-flex gap-3" >
                     <a class="btn btn-success" href="{{ route('comics.show',[ $curComic->id]) }}">Dettagli</a>
+                    <a class="btn btn-warning" href="{{ route('comics.edit',[ $curComic->id]) }}">Modifica</a>
+                    <form action="{{ route('comics.destroy',  [$curComic->id]) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button class="btn btn-danger">CANCELLA</button>
+                    </form>
                   </td>
                 </tr>                    
                 @endforeach
