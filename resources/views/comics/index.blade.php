@@ -32,10 +32,10 @@
                             <a class="btn btn-warning" href="{{ route('comics.edit', [$curComic->id]) }}">Modifica</a>
                         </td>
                         <td>
-                            <form action="{{ route('comics.destroy', [$curComic->id]) }}" method="POST" class="deleteBtn">
+                            <form action="{{ route('comics.destroy', [$curComic->id]) }}" method="POST" class="deleteBtn" class="delete-form">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger md_btn" >CANCELLA</button>
+                                <button class="btn btn-danger md_btn" type="submit" data-pasta-title="{{ $curComic->title }}" >CANCELLA</button>
                             </form>
                         </td>                       
                     </tr>
@@ -47,13 +47,13 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Sei Sicuro Di Voler Eliminare il Fumetto?</h5>
+                  <h5 id="modal-title">Sei Sicuro Di Voler Eliminare il Fumetto?</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                  <button type="button" class="btn btn-primary">Elimina</button>
+                  <button type="button" class="btn btn-danger" id="modal-delete-btn">Elimina</button>
                 </div>
               </div>
             </div>
