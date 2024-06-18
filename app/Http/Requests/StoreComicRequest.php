@@ -30,7 +30,7 @@ class StoreComicRequest extends FormRequest
         ];
     }
 
-    public function message() {
+    public function messages():array {
         return [
             'titel.required' => 'il titolo non può essere vuoto'
         ];

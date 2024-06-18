@@ -11,7 +11,7 @@ class UpdateComicRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,17 @@ class UpdateComicRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title'       => ['required', 'min:3', 'max:70'],
+            'description' => ['min:10'],
+            'price'       => ['required'],
+            'series'      => ['required'],
+            'type'        => ['required']
+        ];
+    }
+
+    public function messages(): array {
+        return [
+            'title.required' => 'il titolo non può essere vuoto'
         ];
     }
 }
