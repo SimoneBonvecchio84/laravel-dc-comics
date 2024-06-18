@@ -32,15 +32,31 @@
                             <a class="btn btn-warning" href="{{ route('comics.edit', [$curComic->id]) }}">Modifica</a>
                         </td>
                         <td>
-                            <form action="{{ route('comics.destroy', [$curComic->id]) }}" method="POST">
+                            <form action="{{ route('comics.destroy', [$curComic->id]) }}" method="POST" class="deleteBtn">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger">CANCELLA</button>
+                                <button class="btn btn-danger md_btn" >CANCELLA</button>
                             </form>
                         </td>                       
                     </tr>
                 @endforeach
             </tbody>
         </table>
+
+        <div class="modal" tabindex="-1" id="delete-modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Sei Sicuro Di Voler Eliminare il Fumetto?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                  <button type="button" class="btn btn-primary">Elimina</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 @endsection
