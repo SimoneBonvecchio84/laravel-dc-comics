@@ -32,7 +32,7 @@
                             <a class="btn btn-warning" href="{{ route('comics.edit', [$curComic->id]) }}">Modifica</a>
                         </td>
                         <td>
-                            <form action="{{ route('comics.destroy', [$curComic->id]) }}" method="POST" class="deleteBtn" class="delete-form">
+                            <form action="{{ route('comics.destroy', [$curComic->id]) }}" method="POST" class="deleteBtn delete-form">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger md_btn" type="submit" data-pasta-title="{{ $curComic->title }}" >CANCELLA</button>

@@ -32,7 +32,13 @@ class UpdateComicRequest extends FormRequest
 
     public function messages(): array {
         return [
-            'title.required' => 'il titolo non può essere vuoto'
+            'title.required'       => 'il titolo non può essere vuoto',
+            'title.min'            => 'devi aggiungere almeno 3 caratteri',
+            'description.required' => 'la descrizione non può essere vuota',
+            'description.min'      => 'devi aggiungere almeno 10 caratteri',
+            'prive.required'       => 'il prezzo non può essere vuoto',
+            'series.required'      => 'la serie non può essere vuota',
+            'type.required'        => 'il tipo  non può essere vuoto'
         ];
     }
 }
